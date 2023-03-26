@@ -1,0 +1,29 @@
+@use '../abstracts/mixins' as mxn;
+
+body {
+	@include mxn.theme-light;
+	font-family: var(--ff-primary);
+	font-size: var(--fz-400);
+	font-weight: var(--fw-400);
+	letter-spacing: -0.2px;
+	color: var(--body-copy);
+	background-color: var(--bg-body);
+	// bg image
+	background-image: var(--bg-image);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
+	// bg-image end
+	overflow-x: hidden;
+	transition: background-color 0.35s ease, color 0.35s ease;
+	@media (prefers-color-scheme: dark) {
+		@include mxn.theme-dark;
+	}
+
+	&[data-theme='light'] {
+		@include mxn.theme-light;
+	}
+	&[data-theme='dark'] {
+		@include mxn.theme-dark;
+	}
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./dist/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+  <link rel="stylesheet" href="./dist/css/main.min.css">
+
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+
+<body class="padding-block-rem-700">
+
+  <header class="margin-block-end-rem-600">
+    <div class="container">
+      <div class="flex-space-between">
+        <h1 class="app-logo">Todo</h1>
+        <button aria-label="Switch to dark theme" data-theme="light" class="theme-toggle">
+          <img src="./dist/images/icon-sun.svg" alt="" class="theme-toggle__icon-light">
+          <img src="./dist/images/icon-moon.svg" alt="" class="theme-toggle__icon-dark">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="app-grid">
+        <!-- Section for todo form -->
+        <section>
+          <h2 class="visually-hidden">Todo form</h2>
+          <form class="todo-form">
+            <div class="todo-form__input-box">
+              <input aria-label="Create a new todo..." name="todo" type="text" placeholder="Create a new todo..."
+                     class="todo-form__input">
+              <p aria-live="polite" role="alert" class="todo-form__error-msg">Task text cannot be empty</p>
+            </div>
+            <button aria-label="Add todo" type="submit" class="check-button">
+              <img src="./dist/images/icon-check.svg" alt="">
+            </button>
+          </form>
+        </section> <!-- Todo form end -->
+        <!-- Main todo app list and filters -->
+        <section class="todo-body">
+          <h2 class="visually-hidden">Todo list</h2>
+
+          <ul class="todo-list">
+          </ul> <!-- Todo list end-->
+
+          <div class="todo-body__footer | flex-space-between">
+            <p id="todo-counter" class="todo-counter">5 items left</p>
+            <ul data-screen="desktop" class="filters">
+              <li><button data-filter="all" class="filter-button active"><span class="visually-hidden">Show</span>
+                  All</button></li>
+              <li><button data-filter="active" class="filter-button"><span class="visually-hidden">Show</span>
+                  Active</button></li>
+              <li><button data-filter="completed" class="filter-button"><span class="visually-hidden">Show</span>
+                  Completed</button></li>
+            </ul>
+            <button class="clear-button">Clear Completed</button>
+          </div>
+        </section> <!-- Main todo app list and filters end-->
+        <!-- Filters for mobile display -->
+        <ul data-screen="mobile" class="filters">
+          <li><button data-filter="all" class="filter-button active"><span class="visually-hidden">Show</span>
+              All</button>
+          </li>
+          <li><button data-filter="active" class="filter-button"><span class="visually-hidden">Show</span>
+              Active</button></li>
+          <li><button data-filter="completed" class="filter-button"><span class="visually-hidden">Show</span>
+              Completed</button></li>
+        </ul> <!-- Filters for mobile display end -->
+      </div>
+      <p class="reorder-info">Drag and drop to reorder list</p>
+    </div>
+  </main>
+
+  <script src="./dist/js/main.min.js" defer></script>
+</body>
+
+</html>
